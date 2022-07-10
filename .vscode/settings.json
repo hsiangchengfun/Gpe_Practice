@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "vector": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "set": "cpp"
     },
     "terminal.integrated.fontSize": 16
 }
