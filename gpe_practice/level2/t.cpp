@@ -1,29 +1,30 @@
-#include<iostream>
-#include<vector>
-#include<set>
-#include<algorithm>
-#define ll long long
-
+#include <iostream>
+#include <cstdio>
+#include <vector>
 using namespace std;
+
 int main(){
-	ll a;
-	vector<ll> v;
-	multiset<ll> s;
-	while(cin>>a){
-		v.push_back(a);
-		// s.insert(a);
-		ll ans=0;
-		sort(v.begin(),v.end());	
-		ll ind = v.size()/2;
-		
-			if(v.size()%2 == 0){
-				ans =( v[ind]+v[ind-1])/2;		
-			}
-			else ans = v[ind];
+  string s;
+  while(cin >> s && s != "."){
+    vector<int> failure(s.length(), 0);
 
-		cout<<ans<<"\n";
-	
-	}
+    for(int i = 1, j = failure[0] = -1 ; i < s.length() ; ++i){
+      cout << "i="<<i<<", j="<<j<<endl;
+	    for(int k = 0;k<failure.size();k++)cout<<failure[k]<<" ";
+      cout<<"\n";
+	while(j >= 0 && s[j+1] != s[i]) j = failure[j];
+      if(s[j+1] == s[i]) ++j;
+      failure[i] = j;
 
-	return 0;
+    }
+
+    int repeatLength = s.length() - failure[s.length() - 1] - 1;
+    if(s.length() % repeatLength == 0){
+      printf("%d\n", s.length() / repeatLength);
+    }
+    else{
+      printf("1\n");
+    }
+  }
+  return 0;
 }

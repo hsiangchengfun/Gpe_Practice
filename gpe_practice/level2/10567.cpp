@@ -1,36 +1,31 @@
 #include<iostream>
 #include<vector>
-#include<string>
 #include<set>
-#define ll long long 
-
+#include<string>
+#define ll long long
 using namespace std;
 
-
 int main(){
-    cin.tie(0);cin.sync_with_stdio(0);
+	string a,b;
+	while(cin>>a>>b){
+		multiset<char> sa,sb,s;
+		vector<ll> va(26,0),vb(26,0);
+		for(ll i=0;i<a.size();i++){sa.insert(a[i]);va[a[i]-'a']++;}
+		for(ll i=0;i<b.size();i++){sb.insert(b[i]);vb[b[i]-'a']++;}
+		
+		for(ll i=0;i<26;i++){
+			if(va[i]>vb[i])va[i]=vb[i];
+			//ll mx = max(va[i],vb[i]);
+			while(va[i]--){
+				s.insert((char)('a'+i));
+			}
+		}
+		for(multiset<char>::iterator itr=s.begin();itr!=s.end();itr++){
+			cout<<*itr;
+		}
+		cout<<"\n";
+	
+	}
 
-    string a,b;
-    while(cin>>a>>b){
-        multiset<char> sett;
-        multiset<char> aaa;
-        for(ll i=0;i<a.length();i++){
-            aaa.insert(a[i]);
-        }
-
-        for(ll i=0;i<b.length();i++){
-        multiset<char>::iterator itr = aaa.find(b[i]);
-            if(itr!=aaa.end())sett.insert(b[i]);
-        }
-        for(multiset<char>::iterator itr=sett.begin();itr!=sett.end();itr++){
-            cout<<(char)*itr;
-        }
-        a="";
-        b="";
-
-        cout<<"\n";
-    }
-    
-    
-    return 0;
+	return 0;
 }
