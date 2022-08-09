@@ -26,9 +26,7 @@ int main(){
 			}	
 		}
 		cout<<s.size()<<"\n";	
-		//auto itr= s.begin();
-		//for(itr = s.begin();itr!=s.end();itr++) cout<<*itr<<" ";
-		//cout<<endl;
+		
 	}
 
 	return 0;

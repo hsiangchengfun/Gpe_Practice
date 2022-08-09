@@ -74,6 +74,9 @@ int main(){
 				n.pop();
 				first=0;
 			}
+			// for(ll i=0;i<num-1;i++)cout<<vec[i]<<" ";
+			// cout<<vec[num-1];
+			// cout<<"\n";
 		}
 		for(ll i=0;i<num-1;i++)cout<<vec[i]<<" ";
 		cout<<vec[num-1];
