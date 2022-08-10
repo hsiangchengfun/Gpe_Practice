@@ -1,3 +1,4 @@
+//Zipf's Law	
 #include<iostream>
 #include<vector>
 #include<map>

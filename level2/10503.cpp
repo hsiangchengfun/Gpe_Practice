@@ -1,3 +1,4 @@
+//Show the Sequence
 #include<iostream>
 #include<vector>
 #include<stack>

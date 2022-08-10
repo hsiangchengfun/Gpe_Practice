@@ -1,3 +1,4 @@
+//Generate random numbers	
 #include<iostream>
 #include<vector>
 #include<string>
