@@ -1,4 +1,5 @@
 //Eb Alto Saxophone Player	
+//Contributer : Chuo Min Yang
 #include <iostream>
 #include <sstream>
 #include <vector>
@@ -25,6 +26,7 @@ int main(){
         vector<int> count(10, 0);
         string s; 
         getline(cin, s);
+
         for(int j = 0; j < s.length() && s[j] != ' '; ++j){
             for(int k = 0; k < 14; ++k){
                 if(s[j] == table[k][0]){
@@ -45,3 +47,19 @@ int main(){
     }
     return 0;
 }
+
+/*
+題解:
+本題只要計算每個音符會用到的按鍵
+並且考慮到如果前一次有按的話此次就不能計入
+
+作法:
+將所有音符以及其按鍵包成 string array
+包含音符及其按鍵
+
+接著另外設立 current 以及 next
+跑一層迴圈 比對前一次和當下那次是否有重複用到的按鍵
+與前一次沒有重複才能把 count++
+
+
+*/
